@@ -32,7 +32,7 @@
  	
  	printf("환전을 원하는 원화 금액을 입력하세요  :  ");
  	scanf("%d", &inputWon);
- 	printf("1. 달러, 2. 엔, 3. 유로, 4. 위안, 5. 파운드  :  ");
+ 	printf("1. USD, 2. JPY, 3. EUR, 4. CNY, 5. GBP  :  ");
  	scanf("%d", &exchoice);
  	
  	// 원화 -> USD로. 
@@ -54,12 +54,12 @@
 	returnWon50 = returnWon%100/50;
 	returnWon10 = returnWon%100%50/10;
 	
-	printf("%d 원  ->  %d 달러 환전 (100달러 : %d장, 50달러 : %d장, 10달러 : %d장, 5달러 : %d장, 1달러 : %d장)\n", inputWon, outputUSDFinal, 
+	printf("\n%d 원\t->\t %d 달러 환전 \n(100달러 : %d장, 50달러 : %d장, 10달러 : %d장, 5달러 : %d장, 1달러 : %d장)\n\n", inputWon, outputUSDFinal, 
 	exchangeUSD100, exchangeUSD50, exchangeUSD10, exchangeUSD5, exchangeUSD1);
- 	printf("%d 원 거스름돈 -> 1000원 : %d장, 500원 : %d개, 100원 : %d개, 50원 : %d개, 10원 : %d개 \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
+ 	printf("거스름돈\t->\t %d 원 \n(1000원 : %d장, 500원 : %d개, 100원 : %d개, 50원 : %d개, 10원 : %d개) \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
  }
 	// 원화 -> JPY로. 
-	if (exchoice == 2) {
+	else if (exchoice == 2) {
 	outputJPY = inputWon / RATE_JPY;
 	outputJPYFinal = outputJPY;
 	returnWon = outputJPY * 100;
@@ -81,12 +81,12 @@
 	returnWon50 = returnWon%100/50;
 	returnWon10 = returnWon%100%50/10;
 
- 	printf("%d 원  ->  %d 엔화 환전 (10000엔 : %d장, 5000엔 : %d장, 1000엔 : %d장, 500엔 : %d개, 100엔 : %d개, 50엔 : %d개, 10엔 : %d개, 5엔 : %d개, 1엔 : %d개)\n", inputWon, outputJPYFinal, 
+ 	printf("\n%d 원\t->\t %d 엔 환전 \n(10000엔 : %d장, 5000엔 : %d장, 1000엔 : %d장, 500엔 : %d개, 100엔 : %d개, 50엔 : %d개, 10엔 : %d개, 5엔 : %d개, 1엔 : %d개)\n\n", inputWon, outputJPYFinal, 
 	 exchangeJPY10000, exchangeJPY5000, exchangeJPY1000, exchangeJPY500, exchangeJPY100, exchangeJPY50, exchangeJPY10, exchangeJPY5, exchangeJPY1);
- 	printf("%d 원 거스름돈 -> 1000원 : %d장, 500원 : %d개, 100원 : %d개, 50원 : %d개, 10원 : %d개 \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
+ 	printf("거스름돈\t->\t %d 원 \n(1000원 : %d장, 500원 : %d개, 100원 : %d개, 50원 : %d개, 10원 : %d개) \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
 }
 	// 원화 -> EUR로. 
-	if (exchoice == 3) {
+	else if (exchoice == 3) {
 	outputEUR = inputWon / RATE_EUR;
 	outputEURFinal = outputEUR;
 	returnWon = outputEUR * 100;
@@ -107,12 +107,12 @@
 	returnWon50 = returnWon%100/50;
 	returnWon10 = returnWon%100%50/10;
 
- 	printf("%d 원  ->  %d 유로 환전 (500유로 : %d장, 200유로 : %d장, 100유로 : %d장, 50유로 : %d장, 20유로 : %d장, 10유로 : %d장, 5유로 : %d장, 1유로 : %d개)\n", inputWon, outputEURFinal, 
+ 	printf("\n%d 원\t->\t %d 유로 환전 \n(500유로 : %d장, 200유로 : %d장, 100유로 : %d장, 50유로 : %d장, 20유로 : %d장, 10유로 : %d장, 5유로 : %d장, 1유로 : %d개)\n\n", inputWon, outputEURFinal, 
 	 exchangeEUR500, exchangeEUR200, exchangeEUR100, exchangeEUR50, exchangeEUR20, exchangeEUR10, exchangeEUR5, exchangeEUR1);
- 	printf("%d 원 거스름돈 -> 1000원 : %d장, 500원 : %d개, 100원 : %d개, 50원 : %d개, 10원 : %d개 \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
+ 	printf("거스름돈\t->\t %d 원 \n(1000원 : %d장, 500원 : %d개, 100원 : %d개, 50원 : %d개, 10원 : %d개) \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
 }
 	// 원화 -> CNY로. 
-	if (exchoice == 4) {
+	else if (exchoice == 4) {
 	outputCNY = inputWon / RATE_CNY;
 	outputCNYFinal = outputCNY;
 	returnWon = outputCNY * 100;
@@ -130,12 +130,12 @@
 	returnWon50 = returnWon%100/50;
 	returnWon10 = returnWon%100%50/10;
 
- 	printf("%d 원  ->  %d 위안화 환전 (50위안 : %d장, 20위안 : %d장, 10위안 : %d장, 5위안 : %d장, 1위안 : %d장)\n", inputWon, outputCNYFinal, 
+ 	printf("\n%d 원\t->\t %d 위안 환전 \n(50위안 : %d장, 20위안 : %d장, 10위안 : %d장, 5위안 : %d장, 1위안 : %d장)\n\n", inputWon, outputCNYFinal, 
 	 exchangeCNY50, exchangeCNY20, exchangeCNY10, exchangeCNY5, exchangeCNY1);
- 	printf("%d 원 거스름돈 -> 1000원 : %d장, 500원 : %d개, 100원 : %d개, 50원 : %d개, 10원 : %d개 \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
-}
+ 	printf("거스름돈\t->\t %d 원 \n(1000원 : %d장, 500원 : %d개, 100원 : %d개, 50원 : %d개, 10원 : %d개) \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
+  }
 	// 원화 -> GBP로. 
-	if (exchoice == 5) {
+	else if (exchoice == 5) {
 	outputGBP = inputWon / RATE_GBP;
 	outputGBPFinal = outputGBP;
 	returnWon = outputGBP * 100;
@@ -153,10 +153,13 @@
 	returnWon50 = returnWon%100/50;
 	returnWon10 = returnWon%100%50/10;
 
- 	printf("%d 원  ->  %d 파운드 환전 (50파운드 : %d장, 20파운드 : %d장, 10파운드 : %d장, 5파운드 : %d장, 1파운드 : %d장)\n", inputWon, outputGBPFinal, 
+ 	printf("\n%d 원\t->\t %d 파운드 환전 \n(50파운드 : %d장, 20파운드 : %d장, 10파운드 : %d장, 5파운드 : %d장, 1파운드 : %d장)\n\n", inputWon, outputGBPFinal, 
 	 exchangeGBP50, exchangeGBP20, exchangeGBP10, exchangeGBP5, exchangeGBP1);
- 	printf("%d 원 거스름돈 -> 1000원 : %d장, 500원 : %d개, 100원 : %d개, 50원 : %d개, 10원 : %d개 \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
- 	return 0;
+ 	printf("거스름돈\t->\t %d 원 \n(1000원 : %d장, 500원 : %d개, 100원 : %d개, 50원 : %d개, 10원 : %d개) \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
+   return 0;
   }
- } 
+  else {
+  	printf("※※※1부터 5까지의 숫자만 입력하세요! ※※※\n\n");
+  } 
+ }
 }
