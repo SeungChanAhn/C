@@ -36,7 +36,7 @@
  	scanf("%d", &exchoice);
  	
  	// 원화 -> USD로. 
-	if (choice == 1) {
+	if (exchoice == 1) {
 	outputUSD = inputWon / RATE_USD;
 	outputUSDFinal = outputUSD;
 	returnWon = outputUSD * 100;
@@ -59,7 +59,7 @@
  	printf("%d 원 거스름돈 -> 1000원 : %d장, 500원 : %d개, 100원 : %d개, 50원 : %d개, 10원 : %d개 \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
  }
 	// 원화 -> JPY로. 
-	if (choice == 2) {
+	if (exchoice == 2) {
 	outputJPY = inputWon / RATE_JPY;
 	outputJPYFinal = outputJPY;
 	returnWon = outputJPY * 100;
@@ -86,7 +86,7 @@
  	printf("%d 원 거스름돈 -> 1000원 : %d장, 500원 : %d개, 100원 : %d개, 50원 : %d개, 10원 : %d개 \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
 }
 	// 원화 -> EUR로. 
-	if (choice == 3) {
+	if (exchoice == 3) {
 	outputEUR = inputWon / RATE_EUR;
 	outputEURFinal = outputEUR;
 	returnWon = outputEUR * 100;
@@ -112,7 +112,7 @@
  	printf("%d 원 거스름돈 -> 1000원 : %d장, 500원 : %d개, 100원 : %d개, 50원 : %d개, 10원 : %d개 \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
 }
 	// 원화 -> CNY로. 
-	if (choice == 4) {
+	if (exchoice == 4) {
 	outputCNY = inputWon / RATE_CNY;
 	outputCNYFinal = outputCNY;
 	returnWon = outputCNY * 100;
@@ -135,7 +135,7 @@
  	printf("%d 원 거스름돈 -> 1000원 : %d장, 500원 : %d개, 100원 : %d개, 50원 : %d개, 10원 : %d개 \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
 }
 	// 원화 -> GBP로. 
-	if (choice == 5) {
+	if (exchoice == 5) {
 	outputGBP = inputWon / RATE_GBP;
 	outputGBPFinal = outputGBP;
 	returnWon = outputGBP * 100;
@@ -157,6 +157,6 @@
 	 exchangeGBP50, exchangeGBP20, exchangeGBP10, exchangeGBP5, exchangeGBP1);
  	printf("%d 원 거스름돈 -> 1000원 : %d장, 500원 : %d개, 100원 : %d개, 50원 : %d개, 10원 : %d개 \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
  	return 0;
- }
+  }
  } 
 }
