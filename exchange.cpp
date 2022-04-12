@@ -116,7 +116,7 @@
 			printf("\n%d 원\t->\t %d 파운드 환전 \n(50파운드 : %d개, 20파운드 : %d개, 10파운드 : %d개, 5파운드 : %d개, 1파운드 : %d개)\n\n", inputWon, outputGBPFinal, 
 				 exchangeGBP50, exchangeGBP20, exchangeGBP10, exchangeGBP5, exchangeGBP1);
 		} else {
-			printf("\n1부터 5까지 입력하세요. 다시 입력하세요.\n\n");
+			printf("\n1부터 5까지 입력하세요. 다시 금액을 입력하세요.\n\n");
 			continue; 
 		}
 			int returnWon1000 = returnWon / 1000;
