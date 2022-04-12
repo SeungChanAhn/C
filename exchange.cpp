@@ -1,12 +1,15 @@
  #include <stdio.h>
  
  int main() {
- 	const float RATE_USD = 1233.70;
+ 	while(true) {
+	const float RATE_USD = 1233.70;
  	const float RATE_JPY = 9.87;
  	const float RATE_EUR = 1342.46;
  	const float RATE_CNY = 193.54;
  	const float RATE_GBP = 1605.09;
-
+ 	
+	int exchoice;
+	
  	int inputWon = 0;
 	int returnWon = 0;
  	int outputUSDFinal = 0;
@@ -21,11 +24,19 @@
  	float outputCNY = 0;
  	float outputGBP = 0;
  	
- 	 	
- 	printf("í™˜ì „ì„ ì›í•˜ëŠ” ì›í™” ê¸ˆì•¡ì„ ìž…ë ¥í•˜ì„¸ìš”  :  ");
- 	scanf("%d", &inputWon);
+ 	int returnWon1000 = returnWon/1000;
+	int returnWon500 = returnWon%1000/500;
+	int returnWon100 = returnWon%1000%500/100;
+	int returnWon50 = returnWon%100/50;
+	int returnWon10 = returnWon%100%50/10;
  	
- 	// ì›í™” -> USDë¡œ. 
+ 	printf("È¯ÀüÀ» ¿øÇÏ´Â ¿øÈ­ ±Ý¾×À» ÀÔ·ÂÇÏ¼¼¿ä  :  ");
+ 	scanf("%d", &inputWon);
+ 	printf("1. ´Þ·¯, 2. ¿£, 3. À¯·Î, 4. À§¾È, 5. ÆÄ¿îµå  :  ");
+ 	scanf("%d", &exchoice);
+ 	
+ 	// ¿øÈ­ -> USD·Î. 
+	if (choice == 1) {
 	outputUSD = inputWon / RATE_USD;
 	outputUSDFinal = outputUSD;
 	returnWon = outputUSD * 100;
@@ -37,17 +48,18 @@
 	int exchangeUSD10 = outputUSDFinal%100%50/10;
 	int exchangeUSD5 = outputUSDFinal%10/5;
 	int exchangeUSD1 = outputUSDFinal%10%5;
- 	int returnWon1000 = returnWon/1000;
-	int returnWon500 = returnWon%1000/500;
-	int returnWon100 = returnWon%1000%500/100;
-	int returnWon50 = returnWon%100/50;
-	int returnWon10 = returnWon%100%50/10;
+ 	returnWon1000 = returnWon/1000;
+	returnWon500 = returnWon%1000/500;
+	returnWon100 = returnWon%1000%500/100;
+	returnWon50 = returnWon%100/50;
+	returnWon10 = returnWon%100%50/10;
 	
-	printf("%d ì›  ->  %d ë‹¬ëŸ¬ í™˜ì „ (100ë‹¬ëŸ¬ : %dìž¥, 50ë‹¬ëŸ¬ : %dìž¥, 10ë‹¬ëŸ¬ : %dìž¥, 5ë‹¬ëŸ¬ : %dìž¥, 1ë‹¬ëŸ¬ : %dìž¥)\n", inputWon, outputUSDFinal, 
+	printf("%d ¿ø  ->  %d ´Þ·¯ È¯Àü (100´Þ·¯ : %dÀå, 50´Þ·¯ : %dÀå, 10´Þ·¯ : %dÀå, 5´Þ·¯ : %dÀå, 1´Þ·¯ : %dÀå)\n", inputWon, outputUSDFinal, 
 	exchangeUSD100, exchangeUSD50, exchangeUSD10, exchangeUSD5, exchangeUSD1);
- 	printf("%d ì› ê±°ìŠ¤ë¦„ëˆ -> 1000ì› : %dìž¥, 500ì› : %dê°œ, 100ì› : %dê°œ, 50ì› : %dê°œ, 10ì› : %dê°œ \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
- 	
-	// ì›í™” -> JPYë¡œ. 
+ 	printf("%d ¿ø °Å½º¸§µ· -> 1000¿ø : %dÀå, 500¿ø : %d°³, 100¿ø : %d°³, 50¿ø : %d°³, 10¿ø : %d°³ \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
+ }
+	// ¿øÈ­ -> JPY·Î. 
+	if (choice == 2) {
 	outputJPY = inputWon / RATE_JPY;
 	outputJPYFinal = outputJPY;
 	returnWon = outputJPY * 100;
@@ -68,13 +80,13 @@
 	returnWon100 = returnWon%1000%500/100;
 	returnWon50 = returnWon%100/50;
 	returnWon10 = returnWon%100%50/10;
-	
- 	printf("%d ì›  ->  %d ì—”í™” í™˜ì „ (10000ì—” : %dìž¥, 5000ì—” : %dìž¥, 1000ì—” : %dìž¥, 500ì—” : %dê°œ, 100ì—” : %dê°œ, 50ì—” : %dê°œ, 10ì—” : %dê°œ, 5ì—” : %dê°œ, 1ì—” : %dê°œ)\n", inputWon, outputJPYFinal, 
+
+ 	printf("%d ¿ø  ->  %d ¿£È­ È¯Àü (10000¿£ : %dÀå, 5000¿£ : %dÀå, 1000¿£ : %dÀå, 500¿£ : %d°³, 100¿£ : %d°³, 50¿£ : %d°³, 10¿£ : %d°³, 5¿£ : %d°³, 1¿£ : %d°³)\n", inputWon, outputJPYFinal, 
 	 exchangeJPY10000, exchangeJPY5000, exchangeJPY1000, exchangeJPY500, exchangeJPY100, exchangeJPY50, exchangeJPY10, exchangeJPY5, exchangeJPY1);
- 	printf("%d ì› ê±°ìŠ¤ë¦„ëˆ -> 1000ì› : %dìž¥, 500ì› : %dê°œ, 100ì› : %dê°œ, 50ì› : %dê°œ, 10ì› : %dê°œ \n\n\n\n", returnWon, 
-	       returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
- 	 	
-	// ì›í™” -> EURë¡œ. 
+ 	printf("%d ¿ø °Å½º¸§µ· -> 1000¿ø : %dÀå, 500¿ø : %d°³, 100¿ø : %d°³, 50¿ø : %d°³, 10¿ø : %d°³ \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
+}
+	// ¿øÈ­ -> EUR·Î. 
+	if (choice == 3) {
 	outputEUR = inputWon / RATE_EUR;
 	outputEURFinal = outputEUR;
 	returnWon = outputEUR * 100;
@@ -94,13 +106,13 @@
 	returnWon100 = returnWon%1000%500/100;
 	returnWon50 = returnWon%100/50;
 	returnWon10 = returnWon%100%50/10;
-	
- 	printf("%d ì›  ->  %d ìœ ë¡œ í™˜ì „ (500ìœ ë¡œ : %dìž¥, 200ìœ ë¡œ : %dìž¥, 100ìœ ë¡œ : %dìž¥, 50ìœ ë¡œ : %dìž¥, 20ìœ ë¡œ : %dìž¥, 10ìœ ë¡œ : %dìž¥, 5ìœ ë¡œ : %dìž¥, 1ìœ ë¡œ : %dê°œ)\n", inputWon, outputEURFinal, 
+
+ 	printf("%d ¿ø  ->  %d À¯·Î È¯Àü (500À¯·Î : %dÀå, 200À¯·Î : %dÀå, 100À¯·Î : %dÀå, 50À¯·Î : %dÀå, 20À¯·Î : %dÀå, 10À¯·Î : %dÀå, 5À¯·Î : %dÀå, 1À¯·Î : %d°³)\n", inputWon, outputEURFinal, 
 	 exchangeEUR500, exchangeEUR200, exchangeEUR100, exchangeEUR50, exchangeEUR20, exchangeEUR10, exchangeEUR5, exchangeEUR1);
- 	printf("%d ì› ê±°ìŠ¤ë¦„ëˆ -> 1000ì› : %dìž¥, 500ì› : %dê°œ, 100ì› : %dê°œ, 50ì› : %dê°œ, 10ì› : %dê°œ \n\n\n\n", returnWon, 
-	       returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
- 	 	
-	// ì›í™” -> CNYë¡œ. 
+ 	printf("%d ¿ø °Å½º¸§µ· -> 1000¿ø : %dÀå, 500¿ø : %d°³, 100¿ø : %d°³, 50¿ø : %d°³, 10¿ø : %d°³ \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
+}
+	// ¿øÈ­ -> CNY·Î. 
+	if (choice == 4) {
 	outputCNY = inputWon / RATE_CNY;
 	outputCNYFinal = outputCNY;
 	returnWon = outputCNY * 100;
@@ -117,13 +129,13 @@
 	returnWon100 = returnWon%1000%500/100;
 	returnWon50 = returnWon%100/50;
 	returnWon10 = returnWon%100%50/10;
- 
- 	printf("%d ì›  ->  %d ìœ„ì•ˆí™” í™˜ì „ (50ìœ„ì•ˆ : %dìž¥, 20ìœ„ì•ˆ : %dìž¥, 10ìœ„ì•ˆ : %dìž¥, 5ìœ„ì•ˆ : %dìž¥, 1ìœ„ì•ˆ : %dìž¥)\n", inputWon, outputCNYFinal, 
+
+ 	printf("%d ¿ø  ->  %d À§¾ÈÈ­ È¯Àü (50À§¾È : %dÀå, 20À§¾È : %dÀå, 10À§¾È : %dÀå, 5À§¾È : %dÀå, 1À§¾È : %dÀå)\n", inputWon, outputCNYFinal, 
 	 exchangeCNY50, exchangeCNY20, exchangeCNY10, exchangeCNY5, exchangeCNY1);
- 	printf("%d ì› ê±°ìŠ¤ë¦„ëˆ -> 1000ì› : %dìž¥, 500ì› : %dê°œ, 100ì› : %dê°œ, 50ì› : %dê°œ, 10ì› : %dê°œ \n\n\n\n", returnWon, 
-	       returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
- 	 	 	
-	// ì›í™” -> GBPë¡œ. 
+ 	printf("%d ¿ø °Å½º¸§µ· -> 1000¿ø : %dÀå, 500¿ø : %d°³, 100¿ø : %d°³, 50¿ø : %d°³, 10¿ø : %d°³ \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
+}
+	// ¿øÈ­ -> GBP·Î. 
+	if (choice == 5) {
 	outputGBP = inputWon / RATE_GBP;
 	outputGBPFinal = outputGBP;
 	returnWon = outputGBP * 100;
@@ -140,10 +152,11 @@
 	returnWon100 = returnWon%1000%500/100;
 	returnWon50 = returnWon%100/50;
 	returnWon10 = returnWon%100%50/10;
-	
- 	printf("%d ì›  ->  %d íŒŒìš´ë“œ í™˜ì „ (50íŒŒìš´ë“œ : %dìž¥, 20íŒŒìš´ë“œ : %dìž¥, 10íŒŒìš´ë“œ : %dìž¥, 5íŒŒìš´ë“œ : %dìž¥, 1íŒŒìš´ë“œ : %dìž¥)\n", inputWon, outputGBPFinal, 
+
+ 	printf("%d ¿ø  ->  %d ÆÄ¿îµå È¯Àü (50ÆÄ¿îµå : %dÀå, 20ÆÄ¿îµå : %dÀå, 10ÆÄ¿îµå : %dÀå, 5ÆÄ¿îµå : %dÀå, 1ÆÄ¿îµå : %dÀå)\n", inputWon, outputGBPFinal, 
 	 exchangeGBP50, exchangeGBP20, exchangeGBP10, exchangeGBP5, exchangeGBP1);
- 	printf("%d ì› ê±°ìŠ¤ë¦„ëˆ -> 1000ì› : %dìž¥, 500ì› : %dê°œ, 100ì› : %dê°œ, 50ì› : %dê°œ, 10ì› : %dê°œ \n\n\n\n", returnWon, 
-	       returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
+ 	printf("%d ¿ø °Å½º¸§µ· -> 1000¿ø : %dÀå, 500¿ø : %d°³, 100¿ø : %d°³, 50¿ø : %d°³, 10¿ø : %d°³ \n\n\n\n", returnWon, returnWon1000, returnWon500, returnWon100, returnWon50, returnWon10);
  	return 0;
+ }
  } 
+}
