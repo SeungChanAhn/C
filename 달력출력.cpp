@@ -2,13 +2,14 @@
 
 int main() {
     const int WIDTH = 7;
+
+    while (true) {
     int year, month;
-    int days = 0; // 1900년부터 지난 일 수 저장하는 변수 
     int dayOfWeek; // 요일 : 월 화 수 목 금 토 일 ( 0 1 2 3 4 5 6 ) 
+	int days = 0; // 1900년부터 지난 일 수 저장하는 변수 
     int yearsum = 0; // 1900년부터 지난 일 수  ( 년 만 ) 
     int monthsum = 0; // 1900년부터 지난 일 수  ( 년 만 ) 
     int monthdaycount = 0;
-    while (true) {
         printf("년도 입력 : ");
         scanf("%d", & year);
         if (year == 0) {
