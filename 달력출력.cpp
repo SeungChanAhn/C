@@ -20,8 +20,8 @@ int main() {
         scanf("%d", & month);
 
 		// ¿±≥‚ ¿œ∂ß 366¿œ + 
-        for (int i = 1900; i < year; i++) {
-            if ((i % 4 == 0) && !(i % 100 == 0) || (i % 400 == 0)) {
+        for (int indexA = 1900; indexA < year; indexA++) {
+            if ((indexA % 4 == 0) && !(indexA % 100 == 0) || (indexA % 400 == 0)) {
                 yearsum += 366;
             } else {
                 yearsum += 365;
